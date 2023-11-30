@@ -1,0 +1,22 @@
+# Blender 3.6.4 MTL File: 'None'
+# www.blender.org
+
+newmtl TreeBark01.063
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeLeaf01_rep.063
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png

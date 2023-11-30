@@ -1,0 +1,128 @@
+# Blender 3.6.4 MTL File: 'None'
+# www.blender.org
+
+newmtl BodyMT_armskin
+Ka 1.000000 1.000000 1.000000
+Ks 0.060784 0.060784 0.060784
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd textures/Map #0.png
+
+newmtl CapMT_armskin
+Ka 1.000000 1.000000 1.000000
+Ks 0.086364 0.086364 0.086364
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd textures/Map #1.png
+
+newmtl EyeBallMT_armskin
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd textures/marioeye_alb.png
+
+
+newmtl EyeMT_armskin
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+
+newmtl EyePupilLeftMT_armskin
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd textures/marioeye_alb.png
+
+newmtl EyePupilRightMT_armskin
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd textures/marioeye_alb.png
+
+newmtl FaceMT_armskin
+Ka 1.000000 1.000000 1.000000
+Ks 0.018182 0.018182 0.018182
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd textures/Map #6.png
+
+
+newmtl HairFaceMT_armskin
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd textures/Map #8.png
+
+newmtl HairMT_armskin
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd textures/Map #7.png
+
+newmtl HairPartsMT_armskin
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd textures/Map #8.png
+
+newmtl HandMT_armskin
+Ka 1.000000 1.000000 1.000000
+Ks 0.495455 0.495455 0.495455
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd textures/Map #10.png
+
+newmtl MouthMT_armskin
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+
+newmtl MustacheMT_armskin
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd textures/Map #8.png
+

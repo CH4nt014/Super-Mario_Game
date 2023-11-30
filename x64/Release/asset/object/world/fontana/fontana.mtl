@@ -1,0 +1,82 @@
+# Blender 3.6.4 MTL File: 'None'
+# www.blender.org
+
+newmtl GoldDeco01.010
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd GoldDeco01_alb.png
+map_d GoldDeco01_alb.png
+
+newmtl GoldDecoSeal00.003
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd GoldDecoSeal00_alb.png
+map_d GoldDecoSeal00_alb.png
+
+newmtl MarbleWhite00.003
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd MarbleWhite00_alb.png
+map_d MarbleWhite00_alb.png
+
+newmtl TileGround00.008
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TileGround00_alb.png
+map_d TileGround00_alb.png
+
+newmtl Water00.011
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd UvDistortion00.png
+map_d UvDistortion00.png
+
+newmtl Water01.004
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd UvDistortion00.png
+map_d UvDistortion00.png
+
+newmtl Water02.004
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd UvDistortion00.png
+map_d UvDistortion00.png
+
+newmtl wire_255255000.062
+Ns 32.000008
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 0.000000
+Ks 0.350000 0.350000 0.350000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2

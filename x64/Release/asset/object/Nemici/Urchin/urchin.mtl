@@ -1,0 +1,35 @@
+# Blender 3.6.4 MTL File: 'None'
+# www.blender.org
+
+newmtl UniraBodyMat
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 1
+map_Kd UniraBodyMat_Alb.png
+map_d UniraBodyMat_Alb.png
+map_Bump -bm 0.300000 UniraBodyMat_Nrm.png
+
+newmtl UniraEyeLMat
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 1
+map_Kd UniraEyeMat_Alb.0.png
+map_d UniraEyeMat_Alb.0.png
+map_Bump -bm 0.300000 UniraEyeMat_Nrm.png
+
+newmtl UniraEyeRMat
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 1
+map_Kd UniraEyeMat_Alb.0.png
+map_d UniraEyeMat_Alb.0.png
+map_Bump -bm 0.300000 UniraEyeMat_Nrm.png

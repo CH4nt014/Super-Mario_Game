@@ -48,8 +48,10 @@ const unsigned int SHADOW_HEIGHT = 1024 * 10;
 vec3 WORLD_UP(0.0f, 1.0f, 0.0f);
 
 // timing
-float deltaTime = 0.0f;
-float previousTime = 0.0f;
+double startTime;
+double currentTime;
+double deltaTime = 0.0f;
+double previousTime = 0.0f;
 int tempo_rimanente = 10000;
 float currentFrame = 0;
 float tempoTrascorso = 0;
@@ -135,6 +137,7 @@ unsigned int gameOvertexture;
 unsigned int wintexture;
 
 string pg;
+string pg_hurt;
 
 //depth map
 unsigned int depthMap;
@@ -153,11 +156,11 @@ Billboard bBoard;
 
 Shader* skyBoxShader;
 Shader* depthShader;
-Shader* myShader;
+Shader* simpleShader;
 Shader* lightShader;
 Shader* pgShader;
 Shader* bBoardShader;
-Shader* smokeShader;
+Shader* particleShader;
 
 //proprietà illuminazione
 vec3 lightPos(-1.0f, 1.0f, -1.0f);
@@ -173,7 +176,7 @@ unsigned int bgVBO3, bgVAO3, bgEBO3;
 unsigned int skyBoxVBO, skyBoxVAO, skyBoxEBO;
 unsigned int pgVBO, pgVAO;
 
-//-----------
+//-MENU-----------
 int menuSelectionShaderProgram;
 int menuSelectionShaderProgram2;
 int menuSelectionShaderProgram3;
@@ -195,6 +198,8 @@ int winShaderProgram;
 
 // Status game setting
 bool top = true;
+bool topP = true;
+bool topA = true;
 bool topS = true;
 bool inizio = true;
 bool star = true;
@@ -207,14 +212,36 @@ bool peach_sound = true;
 bool peach_sound2 = true;
 bool colpito1 = true;
 bool colpito2 = true;
+bool colpito3 = true;
+bool colpito4 = true;
+bool colpito5 = true;
+bool colpito6 = true;
+bool colpito7 = true;
 bool win = false;
+bool hurt = false;
 float altezza = 4;
+float altezzaP = 4;
+float zeta = 98;
+float rotazione = 0;
 float altezzaTubo = -2;
 float altezzaS = -5;
 float muove = 0;
-float angolo = 0;
-float goombaX;
-float goombaZ;
+float angoloG = 0;
+float angoloG2 = 0;
+float angoloP = 0;
+float angoloB = 0;
+float cerchioTerraX;
+float cerchioTerraX2;
+float cerchioTerraZ;
+float cerchioTerraZ2;
+float booZ;
+float bulletX = -61.4986;
+float bulletZ = -34.618;
+float cerchioAriaX;
+float cerchioAriaY;
+float cerchioSinX;
+float cerchioSinY;
+float cerchioSinZ;
 float velocita = 1;
 int pgindex = 0;
 int menuindex = 0;
@@ -227,7 +254,6 @@ int vite = 2;
 int numAlberi = 42;
 int animation = 1;
 
-
 vec3 grandezza;
 vec3 grandezzaM = vec3(1.f, 1.f, 1.f);
 vec3 grandezzaL = vec3(0.7f, 0.7f, 0.7f);
@@ -235,13 +261,42 @@ vec3 grandezzaY = vec3(0.5f, 0.5f, 0.5f);
 
 vec3 posToad = vec3(0.0, 1.0, -16.8);
 vec3 posPeach = vec3(-96.87, 4.21, -136.95);
-vec3 posThwomp = vec3(-92.6461, 2.72707, 21.3614);
+vec3 posThwomp = vec3(-94.37, 3.78, 22.46);
+vec3 posBoo = vec3(-43.40, 11.92, 93.61);
 vec3 posWhomp = vec3(21.7381, 1.0, -13.0);
+vec3 posPuku = vec3(-90.31, 6.82, -91.16);
 vec3 posTubo = vec3(0.282f, 1.0f, 2.383f);
-vec3 posGoomba = vec3(98.89, 6.72, -4.47);
+vec3 posGoomba1;
+vec3 posGoomba2;
+vec3 posBoo2;
+vec3 posUrchin;
+vec3 posSpiny;
 vec3 posStar = vec3(-104.172, 6.32398, -134.487);
 
 vec3 posCoin[20]{
+	vec3(-129.18, 3.27, -84.88),
+	vec3(20.91, 2, -9.416),
+	vec3(-21.41, 2.5, -9.13),
+	vec3(-86.46, 2.71, -22.61),
+	vec3(-94.37, 3.78, 22.46),
+	vec3(-90.81, 3.09, 83.13),
+	vec3(-32.71, 2.74, 142.52),
+	vec3(98.89, 7.72, -4.47),
+	vec3(-157.178,  10.46,  108.567),
+	vec3(-205.634,  8.2331,  81.8917),
+	vec3(-207.078,  21.51, 8.21875),
+	vec3(-229.72,  7.18485,-72.6469),
+	vec3(-165.889,  3.318,  -199.328),
+	vec3(-82.6373,  8.5996,  -199.803),
+	vec3(-0.841358,  9.05948,  -174.974),
+	vec3(62.1103, 4.26467,  -114.65),
+	vec3(12.0577,  18.8928,  -71.8255), //
+	vec3(48.9733,  11.2045,  86.9428),
+	vec3(-21.2466, 23.6972, 52.6158),
+	vec3(-44.3989, 10.7834, 106.232)
+};
+
+vec3 posLightning[20]{
 	vec3(-129.18, 3.27, -84.88),
 	vec3(20.91, 2, -9.416),
 	vec3(-21.41, 2.5, -9.13),
@@ -309,14 +364,6 @@ vec3 posAlberi[42]{
 	vec3(-75.497, 3.44623, 110.476),
 };
 
-void mouse_callback(GLFWwindow* window, double xpos, double ypos);
-void key_callback_menu(GLFWwindow* window, int key, int scancode, int action, int mods);
-void key_callback_menuSelection(GLFWwindow* window, int key, int scancode, int action, int mods);
-void key_callback_levelSelection(GLFWwindow* window, int key, int scancode, int action, int mods);
-void key_callback_pgselect(GLFWwindow* window, int key, int scancode, int action, int mods);
-void key_callback_menuhelp(GLFWwindow* window, int key, int scancode, int action, int mods);
-void handleKeyInput(GLFWwindow* window);
-
 ///////////// MODEL /////////////////
 // World
 Terrain* terreno{};
@@ -324,12 +371,21 @@ skyBox* sb;
 Model* castello;
 Model* fontana;
 Model* tubo;
+Model* tubo1;
 Model* cespugli;
 Model* albero_grande;
 Model* albero_yoshi;
 Model* albero;
 Model* blocchi;
-SmokeHendler* smokePlayer;
+Model* coin;
+Model* stella;
+
+// Particelle
+ParticleHendler* smokeParticle;
+ParticleHendler* lightningParticle;
+ParticleHendler* waterParticle;
+ParticleHendler* dustParticle;
+ParticleHendler* fireParticle;
 
 // Personaggi
 Model* mario;
@@ -344,7 +400,7 @@ Model* mario8;
 Model* mario9;
 Model* mario10;
 Model* mario11;
-Model* mario_schiacciato;
+Model* mario12;
 Model* luigi;
 Model* luigi1;
 Model* luigi2;
@@ -374,16 +430,18 @@ Model* yoshi12;
 Model* captain_toad;
 Model* peach;
 
-
 // Nemici
 Model* thwomp;
 Model* goomba;
 Model* whomp;
-
-
-// Oggetti
-Model* coin;
-Model* stella;
+Model* boo;
+Model* bulletBill;
+Model* chainChomp;
+Model* chain;
+Model* pokey;
+Model* spiny;
+Model* urchin;
+Model* pukupuku;
 
 
 //Inizilizzazione musica
@@ -395,7 +453,13 @@ irrklang::ISoundEngine* SoundEngine_world = irrklang::createIrrKlangDevice();
 irrklang::ISoundEngine* SoundEngine_stella = irrklang::createIrrKlangDevice();
 irrklang::ISoundEngine* SoundEngine_thwomp = irrklang::createIrrKlangDevice();
 
-string pg_hurt;
+void mouse_callback(GLFWwindow* window, double xpos, double ypos);
+void key_callback_menu(GLFWwindow* window, int key, int scancode, int action, int mods);
+void key_callback_menuSelection(GLFWwindow* window, int key, int scancode, int action, int mods);
+void key_callback_levelSelection(GLFWwindow* window, int key, int scancode, int action, int mods);
+void key_callback_pgselect(GLFWwindow* window, int key, int scancode, int action, int mods);
+void key_callback_menuhelp(GLFWwindow* window, int key, int scancode, int action, int mods);
+void handleKeyInput(GLFWwindow* window);
 
 // creazione di un quadrato
 float bgvertices[] = {
@@ -466,7 +530,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 }
 
 void pointLight(Shader* lightingShader) {
-	myShader->use();
+	simpleShader->use();
 	lightingShader->setVec3("light.position", vec3(-68.5, 275.0, -85.5));
 	lightingShader->setVec3("viewPos", lightPosition);
 
@@ -610,6 +674,19 @@ void renderWorld(Model* modello, Shader* shader, vec3 pos, float size) {
 	modello->Draw(shader);
 }
 
+void renderTubo(Model* modello, Shader* shader, vec3 pos, float size, float rotazione) {
+	mat4 viewMatrix = camera.GetViewMatrix();
+	shader->setMat4("view", viewMatrix);
+
+	mat4 model = mat4(1);
+	model = translate(model, pos);
+	model = rotate(model, rotazione, vec3(0.0f, 1.0f, 0.0f));
+	model = scale(model, vec3(size, size, size));
+	shader->setMat4("model", model);
+
+	modello->Draw(shader);
+}
+
 //------------ AZIONI -------------------------
 bool collisionDetect(vec3 oggetto, float grandezza) {
 	if ((oggetto.x - player.getMidValPosition().x) * (oggetto.x - player.getMidValPosition().x) + (oggetto.z - player.getMidValPosition().z) * (oggetto.z - player.getMidValPosition().z) + (oggetto.y - player.getMidValPosition().y) * (oggetto.y - player.getMidValPosition().y) < grandezza)
@@ -636,16 +713,15 @@ bool collisionDetect(vec3 oggetto, float grandezza) {
 //	else pg_sound = true;
 //}
 
-vec3 movimentoThwomp(vec3 pos, float max, float min) {
+vec3 movimentoY(vec3 pos, float speedTop, float speedDown, float max, float min) {
 	if (top) {
-		altezza -= 1.4 * velocita;
+		altezza -= speedTop * velocita;
 		if (altezza < min) {
 			altezza = min;
 			top = false;
 			if (collisionDetect(posThwomp, 600)) {
 				SoundEngine_thwomp->play2D("asset/music/thwomp.wav");
 				if (collisionDetect(posThwomp, 10)) {
-					cout << "vite: " << vite << endl;
 					vite -= 1;
 					SoundEngine_player->play2D(pg_hurt.c_str());
 					schiacciato = true;
@@ -654,7 +730,7 @@ vec3 movimentoThwomp(vec3 pos, float max, float min) {
 		}
 	}
 	else if (!top) {
-		altezza += 0.1 * velocita;
+		altezza += speedDown * velocita;
 		if (altezza > max) {
 			altezza = max;
 			top = true;
@@ -664,7 +740,63 @@ vec3 movimentoThwomp(vec3 pos, float max, float min) {
 	return pos;
 }
 
-float movimentoWhomp(float max, float min) {
+vec3 movimentoZ(vec3 pos, float max, float min, float raggio, float angle) {
+	if (topA) {
+		zeta -= 0.2;
+		if (zeta < min) {
+			zeta = min;
+			rotazione = 0;
+			topA = false;
+			if (collisionDetect(posBoo, 600)) {
+				SoundEngine_thwomp->play2D("asset/music/boo.wav");
+			}
+		}
+	}
+	else if (!topA) {
+		zeta += 0.2;
+		if (zeta > max) {
+			zeta = max;
+			rotazione = 3.1;
+			topA = true;
+			if (collisionDetect(posBoo, 600)) {
+				SoundEngine_thwomp->play2D("asset/music/boo.wav");
+			}
+		}
+	}
+	angoloB += angle;
+	booZ = pos.y + raggio * sin(angoloB);
+	pos = vec3(pos.x, booZ, zeta);
+	return pos;
+}
+
+vec3 movimentoPokey(vec3 pos, float max, float min) {
+	if (topP) {
+		altezzaP -= 0.04 * velocita;
+		if (altezzaP < min) {
+			altezzaP = min;
+			topP = false;
+			if (collisionDetect(posThwomp, 600)) {
+				SoundEngine_thwomp->play2D("asset/music/thwomp.wav");
+				if (collisionDetect(posThwomp, 10)) {
+					vite -= 1;
+					SoundEngine_player->play2D(pg_hurt.c_str());
+					schiacciato = true;
+				}
+			}
+		}
+	}
+	else if (!topP) {
+		altezzaP += 0.6 * velocita;
+		if (altezzaP > max) {
+			altezzaP = max;
+			topP = true;
+		}
+	}
+	pos = vec3(pos.x, altezzaP, pos.z);
+	return pos;
+}
+
+float movimento(float max, float min) {
 	if (inizio) {
 		muove += 0.1 * velocita;
 		if (muove > max) {
@@ -690,11 +822,45 @@ float movimentoWhomp(float max, float min) {
 	return muove;
 }
 
-vec3 movimentoGoomba(vec3 centro, float raggio) {
-	angolo += 0.025 * velocita;
-	goombaX = centro.x + raggio * cos(angolo);
-	goombaZ = centro.z + raggio * sin(angolo);
-	return vec3(goombaX, centro.y, goombaZ);
+vec3 movimentoXZ(vec3 pos,float raggio, float angolo) {
+	bulletX -= 0.2;
+	bulletZ += 0.1;
+	if (bulletX < -105.663 && bulletZ > -17.1178) {
+		bulletX = -62.4986;
+		bulletZ = -33.618;
+		if (collisionDetect(pos, 600)) {
+			SoundEngine_thwomp->play2D("asset/music/bulletBill.wav");
+		}
+	}
+	return vec3(bulletX, pos.y, bulletZ);
+}
+
+vec3 movimentoCircolareXZ(vec3 centro, float raggio, float speed) {
+	angoloG += speed * velocita;
+	cerchioTerraX = centro.x + raggio * cos(angoloG);
+	cerchioTerraZ = centro.z + raggio * sin(angoloG);
+	return vec3(cerchioTerraX, centro.y, cerchioTerraZ);
+}
+
+vec3 movimentoCircolareXY(vec3 centro, float raggio) {
+	angoloP += 0.04;
+	cerchioAriaX = centro.x + raggio * cos(angoloP);
+	cerchioAriaY = centro.y + raggio * sin(angoloP);
+	return vec3(cerchioAriaX, cerchioAriaY, centro.z);;
+}
+
+vec3 movimentoCircolareXYZ(vec3 centro, float raggio) {
+	angoloP += 0.04;
+	cerchioSinX = centro.x + raggio * cos(angoloP);
+	cerchioSinY = centro.y + raggio * sin(angoloP);
+	cerchioSinZ = centro.z + raggio * cos(angoloP);
+	return vec3(cerchioSinX, cerchioSinY, cerchioSinZ);;
+}
+
+vec3 movimentoSin(vec3 centro, float raggio, float angle) {
+	angoloB += angle;
+	booZ = centro.y + raggio * sin(angoloB);
+	return vec3(centro.x, booZ, centro.z);
 }
 
 vec3 movimentoStella() {
@@ -1150,98 +1316,113 @@ void modelLoad() {
 	castello = new Model("asset/object/world/castello/castello.obj");
 	fontana = new Model("asset/object/world/fontana/fontana.obj");
 	tubo = new Model("asset/object/world/tubo/tubo.obj");
+	tubo1 = new Model("asset/object/world/tubo/tubo1.obj");
 	cespugli = new Model("asset/object/world/cespuglio/cespugli.obj");
 	albero_grande = new Model("asset/object/world/alberi/albero_grande.obj");
 	albero_yoshi = new Model("asset/object/world/alberi/albero_yoshi.obj");
 	albero = new Model("asset/object/world/alberi/albero.obj");
 	blocchi = new Model("asset/object/world/blocchi/blocchi.obj");
 
+
 	///////// PARTICELLE /////////////
-	smokePlayer = new SmokeHendler("asset/object/Nuvole/cloud.obj", 2, 0.1, 0.3);
+	smokeParticle = new ParticleHendler("asset/object/Particelle/Nuvole/cloud.obj", 2, 0.1, 0.3);
+	lightningParticle = new ParticleHendler("asset/object/Particelle/Scintille/scintille.obj", 2, 2, 0.3);
+	waterParticle = new ParticleHendler("asset/object/Particelle/Acqua/water.obj", 100, 1.8, 1);
+	fireParticle = new ParticleHendler("asset/object/Particelle/Fuoco/smoke.obj", 2, 0.1, 0.3);
 
 
 	////////// PERSONAGGI ////////////
 	Mario = {
-		mario = new Model("asset/object/Mario/mario.obj"),
-		mario1 = new Model("asset/object/Mario/mario_run1.obj"),
-		mario2 = new Model("asset/object/Mario/mario_run2.obj"),
-		mario3 = new Model("asset/object/Mario/mario_run3.obj"),
-		mario4 = new Model("asset/object/Mario/mario_run4.obj"),
-		mario5 = new Model("asset/object/Mario/mario_run5.obj"),
-		mario6 = new Model("asset/object/Mario/mario_run6.obj"),
-		mario7 = new Model("asset/object/Mario/mario_run7.obj"),
-		mario8 = new Model("asset/object/Mario/mario_run8.obj"),
-		mario9 = new Model("asset/object/Mario/mario_run9.obj"),
-		mario10 = new Model("asset/object/Mario/mario_run10.obj"),
-		mario11 = new Model("asset/object/Mario/mario_run11.obj"),
-		mario_schiacciato = new Model("asset/object/Mario/mario_schiacciato.obj")
+		mario = new Model("asset/object/Personaggi/Mario/mario.obj"),
+		mario1 = new Model("asset/object/Personaggi/Mario/mario_run1.obj"),
+		mario2 = new Model("asset/object/Personaggi/Mario/mario_run2.obj"),
+		mario3 = new Model("asset/object/Personaggi/Mario/mario_run3.obj"),
+		mario4 = new Model("asset/object/Personaggi/Mario/mario_run4.obj"),
+		mario5 = new Model("asset/object/Personaggi/Mario/mario_run5.obj"),
+		mario6 = new Model("asset/object/Personaggi/Mario/mario_run6.obj"),
+		mario7 = new Model("asset/object/Personaggi/Mario/mario_run7.obj"),
+		mario8 = new Model("asset/object/Personaggi/Mario/mario_run8.obj"),
+		mario9 = new Model("asset/object/Personaggi/Mario/mario_run9.obj"),
+		mario10 = new Model("asset/object/Personaggi/Mario/mario_run10.obj"),
+		mario11 = new Model("asset/object/Personaggi/Mario/mario_run11.obj"),
+		mario12 = new Model("asset/object/Personaggi/Mario/mario_schiacciato.obj")
 	};
 
 	Luigi = {
-		luigi = new Model("asset/object/Luigi/Luigi.obj"),
-		luigi1 = new Model("asset/object/Luigi/Luigi1.obj"),
-		luigi2 = new Model("asset/object/Luigi/Luigi2.obj"),
-		luigi3 = new Model("asset/object/Luigi/Luigi3.obj"),
-		luigi4 = new Model("asset/object/Luigi/Luigi4.obj"),
-		luigi5 = new Model("asset/object/Luigi/Luigi5.obj"),
-		luigi6 = new Model("asset/object/Luigi/Luigi6.obj"),
-		luigi7 = new Model("asset/object/Luigi/Luigi7.obj"),
-		luigi8 = new Model("asset/object/Luigi/Luigi8.obj"),
-		luigi9 = new Model("asset/object/Luigi/Luigi9.obj"),
-		luigi10 = new Model("asset/object/Luigi/Luigi10.obj"),
-		luigi11 = new Model("asset/object/Luigi/Luigi11.obj"),
-		luigi12 = new Model("asset/object/Luigi/Luigi_schiacciato.obj")
+		luigi = new Model("asset/object/Personaggi/Luigi/Luigi.obj"),
+		luigi1 = new Model("asset/object/Personaggi/Luigi/Luigi1.obj"),
+		luigi2 = new Model("asset/object/Personaggi/Luigi/Luigi2.obj"),
+		luigi3 = new Model("asset/object/Personaggi/Luigi/Luigi3.obj"),
+		luigi4 = new Model("asset/object/Personaggi/Luigi/Luigi4.obj"),
+		luigi5 = new Model("asset/object/Personaggi/Luigi/Luigi5.obj"),
+		luigi6 = new Model("asset/object/Personaggi/Luigi/Luigi6.obj"),
+		luigi7 = new Model("asset/object/Personaggi/Luigi/Luigi7.obj"),
+		luigi8 = new Model("asset/object/Personaggi/Luigi/Luigi8.obj"),
+		luigi9 = new Model("asset/object/Personaggi/Luigi/Luigi9.obj"),
+		luigi10 = new Model("asset/object/Personaggi/Luigi/Luigi10.obj"),
+		luigi11 = new Model("asset/object/Personaggi/Luigi/Luigi11.obj"),
+		luigi12 = new Model("asset/object/Personaggi/Luigi/Luigi_schiacciato.obj")
 	};
 
 	Yoshi = {
-		yoshi = new Model("asset/object/Yoshi/Yoshi.obj"),
-		yoshi1 = new Model("asset/object/Yoshi/Yoshi1.obj"),
-		yoshi2 = new Model("asset/object/Yoshi/Yoshi2.obj"),
-		yoshi3 = new Model("asset/object/Yoshi/Yoshi3.obj"),
-		yoshi4 = new Model("asset/object/Yoshi/Yoshi4.obj"),
-		yoshi5 = new Model("asset/object/Yoshi/Yoshi5.obj"),
-		yoshi6 = new Model("asset/object/Yoshi/Yoshi6.obj"),
-		yoshi7 = new Model("asset/object/Yoshi/Yoshi7.obj"),
-		yoshi8 = new Model("asset/object/Yoshi/Yoshi8.obj"),
-		yoshi9 = new Model("asset/object/Yoshi/Yoshi9.obj"),
-		yoshi10 = new Model("asset/object/Yoshi/Yoshi10.obj"),
-		yoshi11 = new Model("asset/object/Yoshi/Yoshi11.obj"),
-		yoshi12 = new Model("asset/object/Yoshi/Yoshi_schiacciato.obj")
+		yoshi = new Model("asset/object/Personaggi/Yoshi/Yoshi.obj"),
+		yoshi1 = new Model("asset/object/Personaggi/Yoshi/Yoshi1.obj"),
+		yoshi2 = new Model("asset/object/Personaggi/Yoshi/Yoshi2.obj"),
+		yoshi3 = new Model("asset/object/Personaggi/Yoshi/Yoshi3.obj"),
+		yoshi4 = new Model("asset/object/Personaggi/Yoshi/Yoshi4.obj"),
+		yoshi5 = new Model("asset/object/Personaggi/Yoshi/Yoshi5.obj"),
+		yoshi6 = new Model("asset/object/Personaggi/Yoshi/Yoshi6.obj"),
+		yoshi7 = new Model("asset/object/Personaggi/Yoshi/Yoshi7.obj"),
+		yoshi8 = new Model("asset/object/Personaggi/Yoshi/Yoshi8.obj"),
+		yoshi9 = new Model("asset/object/Personaggi/Yoshi/Yoshi9.obj"),
+		yoshi10 = new Model("asset/object/Personaggi/Yoshi/Yoshi10.obj"),
+		yoshi11 = new Model("asset/object/Personaggi/Yoshi/Yoshi11.obj"),
+		yoshi12 = new Model("asset/object/Personaggi/Yoshi/Yoshi_schiacciato.obj")
 	};
 
-	captain_toad = new Model("asset/object/Toad/captain_toad.obj");
+	captain_toad = new Model("asset/object/Personaggi/Toad/captain_toad.obj");
 
-	peach = new Model("asset/object/Peach/peach.obj");
+	peach = new Model("asset/object/Personaggi/Peach/peach.obj");
 
 	/////// NEMICI ////////
-	thwomp = new Model("asset/object/Thwomp/Thwomp_down.obj");
-	goomba = new Model("asset/object/Goomba/goomba.obj");
-	whomp = new Model("asset/object/Whomp/whomp.obj");
+	thwomp = new Model("asset/object/Nemici/Thwomp/Thwomp_down.obj");
+	goomba = new Model("asset/object/Nemici/Goomba/goomba.obj");
+	whomp = new Model("asset/object/Nemici/Whomp/whomp.obj");
+	boo = new Model("asset/object/Nemici/Boo/boo.obj");
+	bulletBill = new Model("asset/object/Nemici/Bullet Bill/bulletbill2.obj");
+	chainChomp = new Model("asset/object/Nemici/Chain Chomp/chain_chomp.obj");
+	chain = new Model("asset/object/Nemici/Chain Chomp/chain.obj");
+	pokey = new Model("asset/object/Nemici/Pokey/pokey.obj");
+	spiny = new Model("asset/object/Nemici/spiny/spiny.obj");
+	urchin = new Model("asset/object/Nemici/Urchin/urchin.obj");
 
 	/////// COIN /////////////
 	coin = new Model("asset/object/Coin/coin.obj");
 
 	/////// STELLA /////////
 	stella = new Model("asset/object/Stella/star.obj");
+
+	////// PESCE ///////////
+	pukupuku = new Model("asset/object/Nemici/PukuPuku/pukupuku.obj");
 }
 
 void shaderLoad() {
-	myShader = new Shader("shader/point_light.vert", "shader/point_light.frag");
+	simpleShader = new Shader("shader/point_light.vert", "shader/point_light.frag");
 	bBoardShader = new Shader("shader/billboardShader.vs", "shader/billboardShader.fs");
 	depthShader = new Shader("shader/shadow_mapping_depth.vs", "shader/shadow_mapping_depth.fs");
 	skyBoxShader = new Shader("shader/skybox.vs", "shader/skybox.fs");
 	pgShader = new Shader("shader/car_select.vs", "shader/car_select.fs");
-	smokeShader = new Shader("shader/vertex_shader.vert", "shader/fragment_shader.frag");
+	particleShader = new Shader("shader/particle_shader.vs", "shader/particle_shader.fs");
 
 	skyBoxShader->use();
 	skyBoxShader->setInt("skybox", 0);
 
-	myShader->use();
-	myShader->setInt("diffuseTexture", 0);
-	myShader->setInt("shadowMap", 10);
+	simpleShader->use();
+	simpleShader->setInt("diffuseTexture", 0);
+	simpleShader->setInt("shadowMap", 10);
 
-	smokeShader->use();
-	smokeShader->setInt("shadowMap", 4);
+	particleShader->use();
+	particleShader->setInt("shadowMap", 4);
 }
 
 void renderCubeSkyBox(Shader* shader)
@@ -1343,7 +1524,7 @@ int main()
 		posVecchia = player.position;
 		tempo_rimanente -= tempoTrascorso;
 		player.position = terreno->updateCameraPositionOnMap(player.position, posVecchia, 2, false);
-		terreno->setShaders(myShader);
+		terreno->setShaders(simpleShader);
 
 
 		/////////// START //////////////
@@ -1538,17 +1719,19 @@ int main()
 			mat4 lightView = lookAt(lightPos, vec3(0.0f), WORLD_UP);
 			lightSpaceMatrix = lightProjection * lightView;
 
-			initShader(myShader);
-			pointLight(myShader);
+			initShader(simpleShader);
+			pointLight(simpleShader);
 
 			////////// RENDER PARTICELLE ///////////
-			//initShader(smokeShader);
-			smokePlayer->setShaders(myShader);
+			smokeParticle->setShaders(simpleShader);
+			lightningParticle->setShaders(simpleShader);
+			waterParticle->setShaders(simpleShader);
+			fireParticle->setShaders(simpleShader);
 
 
 			///////// RENDER STAR ////////////
-			initShader(myShader);
-			renderStella(stella, myShader, movimentoStella());
+			initShader(simpleShader);
+			renderStella(stella, simpleShader, movimentoStella());
 
 			if (collisionDetect(movimentoStella(), 2)) {
 				win = true;
@@ -1557,19 +1740,27 @@ int main()
 
 			////////// RENDER COIN //////////////
 			for (int i = 0; i < obiettivi; i++) {
+				if (collisionDetect(posLightning[i], 10.0)) {
+					lightningParticle->addParticleGenerator(currentFrame, posLightning[i] + vec3(0.0, 1.0, 0.0), posLightning[i] + vec3(0.0, -0.5, 0.0));
+					lightningParticle->Draw(currentFrame, vec3(1., 1., 1.));
+					posLightning[i].y -= 1;
+
+				}
 				if (collisionDetect(posCoin[i], 10.0)) {
 					SoundEngine_world->play2D("asset/music/coin.wav");
 					posCoin[i].y = -20;
 					monete += 1;
 				}
-				renderCoin(coin, myShader, posCoin[i]);
+				renderCoin(coin, simpleShader, posCoin[i]);
+
 			}
 
 			////////////// RENDER NEMICI ///////////////
-			// goomba
-			renderNemico(goomba, myShader, movimentoGoomba(vec3(98.89, 6.72, -4.47), 5), vec3(2.8, 2.8, 2.8), -1.55f * (float)glfwGetTime(), vec3(0.0f, 1.0f, 0.0f), true);
+			// Goomba
+			posGoomba1 = movimentoCircolareXZ(vec3(98.89, 6.72, -4.47), 5, 0.015);
+			renderNemico(goomba, simpleShader, posGoomba1, vec3(2.8, 2.8, 2.8), -1.55f * (float)glfwGetTime(), vec3(0.0f, 1.0f, 0.0f), true);
 			if (collisionDetect(vec3(98.89, 6.72, -4.47), 30.0)) {
-				if (collisionDetect(movimentoGoomba(vec3(98.89, 6.72, -4.47), 5), 1.0)) {
+				if (collisionDetect(posGoomba1, 1.0)) {
 					if (colpito1){
 						vite -= 1;
 						SoundEngine_player->play2D(pg_hurt.c_str());
@@ -1580,9 +1771,10 @@ int main()
 			}
 			else colpito1 = true;
 
-			renderNemico(goomba, myShader, movimentoGoomba(vec3(-91.65, 2.71, 83.47), 5), vec3(2.8, 2.8, 2.8), -1.55f * (float)glfwGetTime(), vec3(0.0f, 1.0f, 0.0f), true);
+			posGoomba2 = movimentoCircolareXZ(vec3(-91.65, 2.71, 83.47), 5, 0.015);
+			renderNemico(goomba, simpleShader, posGoomba2, vec3(2.8, 2.8, 2.8), -1.55f * (float)glfwGetTime(), vec3(0.0f, 1.0f, 0.0f), true);
 			if (collisionDetect(vec3(-91.65, 2.71, 83.47), 30.0)) {
-				if (collisionDetect(movimentoGoomba(vec3(-91.65, 2.71, 83.47), 5), 1.0)) {
+				if (collisionDetect(posGoomba2, 1.0)) {
 					if (colpito2) {
 						vite -= 1;
 						SoundEngine_player->play2D(pg_hurt.c_str());
@@ -1592,43 +1784,108 @@ int main()
 				}
 			}
 			else colpito2 = true;
-			// twhomp
-			renderNemico(thwomp, myShader, movimentoThwomp(posThwomp, 8.72707f, 2.2707f), vec3(10, 10, 10), 0.0f, vec3(0.0f, 0.0f, 0.0f),false);
-			if (collisionDetect(movimentoThwomp(posThwomp, 8.72707f, 2.72707f), 3.0)) {
+
+			// Twhomp
+			renderNemico(thwomp, simpleShader, movimentoY(posThwomp, 1.0, 0.1, 8.72707f, 2.2707f), vec3(11, 11, 11), 0.0f, vec3(0.0f, 0.0f, 0.0f),false);
+			if (collisionDetect(movimentoY(posThwomp, 1.0, 0.1, 8.72707f, 2.2707f), 3.0)) {
 				player.position = posVecchia;
 			}
-			// whomp
-			renderNemico(whomp, myShader, posWhomp, vec3(0.3, 0.3, 0.3), movimentoWhomp(1.5f, 0.0f), vec3(1.0f, 0.0f, 0.0f), true);
+
+			// Whomp
+			renderNemico(whomp, simpleShader, posWhomp, vec3(0.3, 0.3, 0.3), movimento(1.5f, 0.0f), vec3(1.0f, 0.0f, 0.0f), true);
 			if (collisionDetect(posWhomp, 3.0)) {
 				player.position = posVecchia;
 			}
 
-			if (vite <= -1  ) {
-				gamestatus = 6;
-			}
+			// Pukupuku
+			renderNemico(pukupuku, simpleShader, movimentoCircolareXY(vec3(-98.19, 6.94, -89.50), 7), vec3(1.5, 1.5, 1.5), 1.75f * (float)glfwGetTime(), vec3(0.0f, 0.0f, 1.0f), true);
+			
 
-			////////// RENDER PERSONAGGIO //////////////
+			// Boo
+			//// cerchio
+			posBoo2 = movimentoCircolareXZ(movimentoSin(vec3(-207.078, 21.51, 8.21875), 1, 0.1), 5, 0.015);
+			renderNemico(boo, simpleShader, posBoo2, vec3(1.5, 1.5, 1.5), 1.75f * (float)glfwGetTime(), vec3(0.0f, 1.0f, 0.0f), true);
+			if (collisionDetect(posBoo2, 3)) {
+				if (colpito3) {
+					vite -= 1;
+					SoundEngine_thwomp->play2D("asset/music/boo.wav");
+					SoundEngine_player->play2D(pg_hurt.c_str());
+					schiacciato = true;
+					colpito3 = false;
+				}
+			}else colpito3 = true;
+
+			//// avanti e indietro
+			renderNemico(boo, simpleShader, movimentoZ(vec3(-43.40, 11.92, 93.61), 119.86, 93.61, 1, 0.015), vec3(1.5, 1.5, 1.5), rotazione, vec3(0.0f, 1.0f, 0.0f), true);
+			if (collisionDetect(movimentoZ(vec3(-43.40, 11.92, 93.61), 119.86, 93.61, 1, 0.025), 3.0)) {
+				if (colpito4) {
+					vite -= 1;
+					SoundEngine_player->play2D(pg_hurt.c_str());
+					schiacciato = true;
+					colpito4 = false;
+				}
+			}
+			else colpito4 = true;
+
+			// Urchin
+			posUrchin = movimentoCircolareXZ(vec3(-98.19, 5.94, -89.50), 35, 0.01);
+			renderNemico(urchin, simpleShader, posUrchin, vec3(2.5, 2.5, 2.5), -1.55f * (float)glfwGetTime(), vec3(1.0f, 0.0f, 1.0f), true);
+			if (collisionDetect(posUrchin + vec3(0.0, -2.0, 0.0), 20)) {
+				if (colpito7) {
+					vite -= 1;
+					SoundEngine_player->play2D(pg_hurt.c_str());
+					schiacciato = true;
+					colpito7 = false;
+				}
+			}
+			else colpito7 = true;
+
+			// Pokey
+			renderNemico(pokey, simpleShader, movimentoPokey(vec3(-1.33, 9.24, -174.35), 7.74, -2), vec3(2, 2, 2), -1.55f * (float)glfwGetTime(), vec3(1.0f, 1.0f, 1.0f), false);
+			if (collisionDetect(movimentoPokey(vec3(-1.33, 9.24, -174.35), 7.74, -2), 3.0)) {
+				if (colpito5) {
+					vite -= 1;
+					SoundEngine_player->play2D(pg_hurt.c_str());
+					schiacciato = true;
+					colpito5 = false;
+				}
+			}
+			else colpito5 = true;
+
+			// Bullet Bill
+			renderNemico(bulletBill, simpleShader, movimentoXZ(vec3(-61.4986, 3.20, -34.618), 5, 0.005), vec3(0.05,0.05,0.05), -1.15, vec3(0.0f, 1.0f, 0.0f), true);
+			fireParticle->addParticleGenerator(currentFrame, movimentoXZ(vec3(-61.4986, 2.70, -34.618), 5, 0.005), movimentoXZ(vec3(-61.4986, 3.70, -34.618), 5, 0.005));
+			fireParticle->Draw(currentFrame, vec3(1.0,1.0,1.0));
+			if (collisionDetect(movimentoXZ(vec3(-61.4986, 2.20, -34.618), 5, 0.005), 4.0)) {
+				if (colpito6) {
+					vite -= 1;
+					SoundEngine_player->play2D(pg_hurt.c_str());
+					schiacciato = true;
+					colpito6 = false;
+				}
+			}
+			else colpito6 = true;
+
+			////////// RENDER PLAYER //////////////
 			if(start){
 				if (animazione) {
-					initShader(myShader);
-					renderPersonaggio(Personaggio[animation], myShader, grandezza, posPg, false, false);
-					smokePlayer->addSmokeGenerator(currentFrame, player.position + vec3(0.0, -3.0, 0.0), player.position + vec3(0.0, -1.5, 0.0));
-					smokePlayer->Draw(currentFrame, vec3(0.5, 0.7, 0.5));
+					initShader(simpleShader);
+					renderPersonaggio(Personaggio[animation], simpleShader, grandezza, posPg, false, false);
+					smokeParticle->addParticleGenerator(currentFrame, player.position + vec3(0.0, -3.0, 0.0), player.position + vec3(0.0, -1.5, 0.0));
+					smokeParticle->Draw(currentFrame, vec3(0.5, 0.7, 0.5));
 					if (animation >= 11 && animation < 12) {
 						animation = 1;
 					}
 				}
 				else if (schiacciato) {
-					renderPersonaggio(Personaggio[12], myShader, grandezza, posPg, true, false);
+					renderPersonaggio(Personaggio[12], simpleShader, grandezza, posPg, true, false);
 				}
-				else renderPersonaggio(Personaggio[0], myShader, grandezza, posPg, false, false);
+				else renderPersonaggio(Personaggio[0], simpleShader, grandezza, posPg, false, false);
 			}
-
-
-			
+						
 			//////// RENDER TOAD //////////////
-			initShader(myShader);
-			renderWorld(captain_toad, myShader, posToad, 0.01);
+			initShader(simpleShader);
+			renderWorld(captain_toad, simpleShader, posToad, 0.01);
 			if (collisionDetect(posToad, 4)) {
 				initShader(bBoardShader);
 				bBoard.drawBillboard(vec3(0.0f, 0.0f, -0.11f), vec3(0.0f, 0.026f, 0.0f), vec3(0.06f, 0.035f, 0.1f), fumetto_toad, bBoardShader);
@@ -1643,8 +1900,8 @@ int main()
 			else toad_sound = true;
 
 			//////// RENDER PEACH //////////////
-			initShader(myShader);
-			renderWorld(peach, myShader, posPeach, 0.15);
+			initShader(simpleShader);
+			renderWorld(peach, simpleShader, posPeach, 0.15);
 			if (collisionDetect(posPeach, 4.0) && monete == obiettivi) {
 				initShader(bBoardShader);
 				bBoard.drawBillboard(vec3(0.0f, 0.0f, -0.11f), vec3(0.0f, 0.026f, 0.0f), vec3(0.06f, 0.035f, 0.1f), fumetto_peach_star, bBoardShader);
@@ -1678,44 +1935,68 @@ int main()
 			terreno->Draw();
 
 			// castello
-			renderWorld(castello, myShader, vec3(-105.391f, -2.50679f, -167.198f), 10.0);
+			renderWorld(castello, simpleShader, vec3(-105.391f, -2.50679f, -167.198f), 10.0);
 			if (collisionDetect(vec3(-105.391f, -2.00679f, -167.198f), 800.0)) {
 				player.position = posVecchia;
 			}
 
 			// fontana
-			renderWorld(fontana, myShader, vec3(-98.0069f, 4.933f, -89.6022f), 8.0);
-			if (collisionDetect(vec3(-98.0069f, 4.933f, -89.6022f), 130.0)) {
-				player.position = posVecchia;
+			renderWorld(fontana, simpleShader, vec3(-98.0069f, 4.933f, -89.6022f), 8.0);
+			if (collisionDetect(vec3(-98.0069f, 4.933f, -89.6022f), 500.0)) {
+				waterParticle->addParticleGenerator(currentFrame, vec3(-98.0069f, 11.933f, -89.6022f), vec3(-98.0069f, 5.933f, -89.6022f));
+				waterParticle->Draw(currentFrame, vec3(0.15, 0.15, 0.15));
+				if (collisionDetect(vec3(-98.0069f, 4.933f, -89.6022f), 130.0)) {
+					player.position = posVecchia;
+				}
 			}
+			
 			// tubo iniziale
-			renderWorld(tubo, myShader, movimentoTubo(posTubo), 0.2);
+			renderWorld(tubo, simpleShader, movimentoTubo(posTubo), 0.2);
 			if (collisionDetect(posTubo, 3.0)) {
 				player.position = posVecchia;
 			}
-			// cespugli
-			renderWorld(cespugli, myShader,vec3(0.0,0.0,0.0), 1.0); 
 
-			// alberi
-			renderWorld(albero_grande, myShader,vec3(-22.148,4.857,-149.109), 10.0);
+			// Tubo 1
+			renderTubo(tubo1, simpleShader, vec3(-62.4986, 3.20, -33.618), 0.25, 2.1);
+			if (collisionDetect(vec3(-62.4986, 3.20, -33.618), 3.0)) {
+				player.position = posVecchia;
+			}
+			// Tubo 2
+			renderTubo(tubo1, simpleShader, vec3(-99.663, 3.20, -15.4178), 0.25, -1.2);
+			if (collisionDetect(vec3(-99.663, 3.20, -15.4178), 3.0)) {
+				player.position = posVecchia;
+			}
+
+			// cespugli
+			renderWorld(cespugli, simpleShader,vec3(0.0,0.0,0.0), 1.0); 
+
+			// albero grande
+			renderWorld(albero_grande, simpleShader,vec3(-22.148,4.857,-149.109), 10.0);
 			if (collisionDetect(vec3(-22.148, 5.857, -149.109), 37.0)) {
 				player.position = posVecchia;
 			}
 
-			renderWorld(albero_yoshi, myShader,vec3(-24.995,14.883,-54.685), 10.0);
+			// albero Yoshi
+			renderWorld(albero_yoshi, simpleShader,vec3(-24.995,14.883,-54.685), 10.0);
 			if (collisionDetect(vec3(-24.995, 14.883, -54.685), 18.0)) {
 				player.position = posVecchia;
 			}
 
-			//renderWorld(albero, myShader, vec3(0.0, 0.0, 0.0), 1.0);
+			// alberi
 			for (int i = 0; i < numAlberi; i++) {
-				renderWorld(albero, myShader, posAlberi[i]+vec3(0.0, -2.0, 0.0), 10.0);
+				renderWorld(albero, simpleShader, posAlberi[i]+vec3(0.0, -2.0, 0.0), 10.0);
 				if (collisionDetect(posAlberi[i], 10.0)) {
 					player.position = posVecchia;
 				}
 			}
+			
 			// blocchi
-			renderWorld(blocchi, myShader, vec3(0.0, 0.0, 0.0), 1.0);
+			renderWorld(blocchi, simpleShader, vec3(0.0, 0.0, 0.0), 1.0);
+
+			/////////// GAME OVER ///////////////
+			if (vite <= -1) {
+				gamestatus = 6;
+			}
 
 			glDepthFunc(GL_LEQUAL);
 
@@ -1983,24 +2264,41 @@ void handleKeyInput(GLFWwindow* window)
 			}
 		}
 
+		if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) { //da aggiustare l'animazione del movimento indietro
+			player.ProcessKeyboard(PG_BACKWARD, deltaTime);
+			//camera.ProcessKeyboard(FORWARD, deltaTime);
+			schiacciato = false;
+			animazione = true;
+			animation++;
+
+			if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
+				player.ProcessKeyboard(PG_LEFT, deltaTime);
+				camera.ProcessKeyboard(ROTATE_LEFT, deltaTime);
+			}
+			if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
+				player.ProcessKeyboard(PG_RIGHT, deltaTime);
+				camera.ProcessKeyboard(ROTATE_RIGHT, deltaTime);
+			}
+			if (camera.isFixed()) {
+				if (abs(dot(normalize(camera.Front), normalize(player.front)) > 0.5))
+					camera.BackEffect();
+				else
+					camera.ForwardEffect();
+			}
+		}
+
 		else if (glfwGetKey(window, GLFW_KEY_W) == GLFW_RELEASE) {
 			animazione = false;
 			////// Movimento a sinistra
-			if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS) {
+			if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
 				player.ProcessKeyboard(PG_LEFT, deltaTime);
 				//camera.ProcessKeyboard(ROTATE_LEFT, deltaTime);
 			}
 			////// Movimento a destra
-			else if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS) {
+			else if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
 				player.ProcessKeyboard(PG_RIGHT, deltaTime);
 				//camera.ProcessKeyboard(ROTATE_RIGHT, deltaTime);
 			}
-			/*else if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) {
-				camera.ProcessKeyboard(UP, deltaTime);
-			}
-			else if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS) {
-				camera.ProcessKeyboard(DOWN, deltaTime);
-			}*/
 		}
 
 		/////// Fermo

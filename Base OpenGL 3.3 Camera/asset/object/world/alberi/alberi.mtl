@@ -1,0 +1,842 @@
+# Blender 3.6.4 MTL File: 'None'
+# www.blender.org
+
+newmtl TreeBark01.001
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.002
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.003
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.004
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.005
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.006
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.007
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.008
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.009
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.010
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.011
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.012
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.013
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.014
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.015
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.016
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.017
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.018
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.019
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.020
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.021
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.022
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.023
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.024
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.025
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.026
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.027
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.028
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.029
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.030
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.031
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.032
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.033
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.034
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.035
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.036
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.037
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.038
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.039
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.040
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.041
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeBark01.064
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeBark01_alb.png
+map_d TreeBark01_alb.png
+
+newmtl TreeLeaf01_rep.001
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.002
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.003
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.004
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.005
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.006
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.007
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.008
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.009
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.010
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.011
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.012
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.013
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.014
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.015
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.016
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.017
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.018
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.019
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.020
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.021
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.022
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.023
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.024
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.025
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.026
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.027
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.028
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.029
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.030
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.031
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.032
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.033
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.034
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.035
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.036
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.037
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.038
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.039
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.040
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.041
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png
+
+newmtl TreeLeaf01_rep.064
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TreeLeaf01_rep_alb.png
+map_d TreeLeaf01_rep_alb.png

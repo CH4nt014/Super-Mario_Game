@@ -1,0 +1,52 @@
+# Blender 3.6.4 MTL File: 'tubería super mario.blend'
+# www.blender.org
+
+newmtl Brick01_AT.008
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd Brick01_AT_alb.png
+map_d Brick01_AT_alb.png
+
+newmtl GrassPeachSet03.003
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd GrassPeachSet03_alb.png
+map_d GrassPeachSet03_alb.png
+
+newmtl ShrubberyPlants00.008
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd ShrubberyPlants00_alb.png
+map_d ShrubberyPlants00_alb.png
+
+newmtl ShrubberyPlants01.003
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd ShrubberyPlants01_alb.png
+map_d ShrubberyPlants01_alb.png
+
+newmtl TileBaseBrick00.003
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd TileBaseBrick00_alb.png
+map_d TileBaseBrick00_alb.png

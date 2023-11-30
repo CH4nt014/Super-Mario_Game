@@ -1,0 +1,13 @@
+# Blender 3.6.4 MTL File: 'None'
+# www.blender.org
+
+newmtl m_Sanbo
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 1
+map_Kd sanbo_alb.png
+map_Ks sanbo_spm.png
+map_d sanbo_alb.png
+map_Bump -bm 0.300000 sanbo_nrm.png

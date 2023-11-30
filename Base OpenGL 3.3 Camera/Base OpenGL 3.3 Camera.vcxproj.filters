@@ -73,10 +73,10 @@
     <None Include="skybox.vs">
       <Filter>Shader Files</Filter>
     </None>
-    <None Include="smokeShader.vs">
+    <None Include="shader\particle_shader.fs">
       <Filter>Shader Files</Filter>
     </None>
-    <None Include="smokeShader.fs">
+    <None Include="shader\particle_shader.vs">
       <Filter>Shader Files</Filter>
     </None>
   </ItemGroup>

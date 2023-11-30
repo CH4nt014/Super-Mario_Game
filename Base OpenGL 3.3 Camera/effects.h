@@ -22,12 +22,12 @@ public:
 	}
 };
 
-class SmokeGenerator
+class ParticleGenerator
 {
 
 public:
 
-	SmokeGenerator(string modelDir, int amount) {
+	ParticleGenerator(string modelDir, int amount) {
 		modello = Model(modelDir);
 		this->amount = amount;
 		this->attivo = attivo;
@@ -56,7 +56,7 @@ public:
 			particles.push_back(new Particle(life, tempoInziale, posInit, a, b, alpha));
 		}
 		this->attivo = true;
-		this->tempoInizialeFumo = tempoInit;
+		this->tempoInizialeParticella = tempoInit;
 	}
 
 	void setShaders(Shader* shaderS) {
@@ -71,7 +71,7 @@ public:
 		float normaV = sqrt(pow(v.x, 2) + pow(v.y, 2) + pow(v.z, 2));
 		float normaU = sqrt(pow(u.x, 2) + pow(u.y, 2) + pow(u.z, 2));
 		float normaW = sqrt(pow(w.x, 2) + pow(w.y, 2) + pow(w.z, 2));
-		if (tempoCorrente - tempoInizialeFumo <= particles[0]->life) {
+		if (tempoCorrente - tempoInizialeParticella <= particles[0]->life) {
 			glEnable(GL_BLEND);
 			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 			for (int i = 0; i < amount; i++) {
@@ -113,7 +113,7 @@ private:
 	//vettori lungo cui muoversi
 	glm::vec3 v, u, w;
 	bool attivo;
-	float tempoInizialeFumo;
+	float tempoInizialeParticella;
 
 	float RandomNumber(float Min, float Max)
 	{
@@ -122,23 +122,23 @@ private:
 
 };
 
-class SmokeHendler {
+class ParticleHendler {
 public:
-	SmokeHendler(string modelDir, int nParticle, float raggio, float vita) {
+	ParticleHendler(string modelDir, int nParticle, float raggio, float vita) {
 		this->modelDir = modelDir;
 		this->nParticle = nParticle;
 		this->raggio = raggio;
 		this->vita = vita;
 	}
 
-	SmokeHendler() {
+	ParticleHendler() {
 
 	}
 
-	void addSmokeGenerator(float tempoInit, glm::vec3 posCassa, glm::vec3 posFinale) {
-		SmokeGenerator* smokeGen = new SmokeGenerator(modelDir, nParticle);
-		smokeGen->generaParticle(tempoInit, posCassa, posFinale, raggio, vita);
-		smokeGenerators.push_back(smokeGen);
+	void addParticleGenerator(float tempoInit, glm::vec3 posOggetto, glm::vec3 posFinale) {
+		ParticleGenerator* partGen = new ParticleGenerator(modelDir, nParticle);
+		partGen->generaParticle(tempoInit, posOggetto, posFinale, raggio, vita);
+		particleGenerators.push_back(partGen);
 	}
 
 	void setShaders(Shader* shader) {
@@ -150,19 +150,19 @@ public:
 	}
 
 	void Draw(float tempoCorrente, vec3 grandezza) {
-		for (int i = 0; i < smokeGenerators.size(); i++) {
-			SmokeGenerator* smokeGen = smokeGenerators[i];
-			if (smokeGen->getStatus()) {
-				smokeGen->setShaders(shader);
-				smokeGen->Draw(tempoCorrente, grandezza);
+		for (int i = 0; i < particleGenerators.size(); i++) {
+			ParticleGenerator* partGen = particleGenerators[i];
+			if (partGen->getStatus()) {
+				partGen->setShaders(shader);
+				partGen->Draw(tempoCorrente, grandezza);
 			}
 		}
-		rimuoviSmokeGenDisattivati();
+		rimuoviParticleGenDisattivati();
 	}
 
 
 private:
-	vector<SmokeGenerator*> smokeGenerators;
+	vector<ParticleGenerator*> particleGenerators;
 	Model modello;
 	Shader* shader;
 	string modelDir;
@@ -170,8 +170,8 @@ private:
 	float raggio;
 	float vita;
 
-	void rimuoviSmokeGenDisattivati() {
+	void rimuoviParticleGenDisattivati() {
 		// Rimuove gli elementi pari dal vettore
-		smokeGenerators.erase(std::remove_if(smokeGenerators.begin(), smokeGenerators.end(), [](SmokeGenerator* x) { return x->getStatus() == false; }), smokeGenerators.end());
+		particleGenerators.erase(std::remove_if(particleGenerators.begin(), particleGenerators.end(), [](ParticleGenerator* x) { return x->getStatus() == false; }), particleGenerators.end());
 	}
 };

@@ -1,0 +1,87 @@
+# Blender 3.6.4 MTL File: 'None'
+# www.blender.org
+
+newmtl AccessoryMT.001
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 1
+map_Kd KinopioBrigadeAccessory_alb.png
+map_d KinopioBrigadeAccessory_alb.png
+map_Bump -bm 0.300000 KinopioBrigadeAccessory_nrm.png
+
+newmtl BodyMT
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 1
+map_Kd KinopioBrigadeBody_alb.png
+map_d KinopioBrigadeBody_alb.png
+map_Bump -bm 0.300000 KinopioBrigadeBody_nrm.png
+
+newmtl BodyMT.001
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 1
+map_Kd KinopioBrigadeBody_alb.png
+map_d KinopioBrigadeBody_alb.png
+map_Bump -bm 0.300000 KinopioBrigadeBody_nrm.png
+
+newmtl EyeMT.001
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 1
+map_Kd KinopioEye_alb.png
+map_d KinopioEye_alb.png
+
+newmtl FaceMT.001
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 1
+map_Kd KinopioBrigadeFace_alb.png
+map_d KinopioBrigadeFace_alb.png
+
+newmtl GlassMT.001
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 1
+map_Kd KinopioBrigadeAccessory_alb.png
+map_d KinopioBrigadeAccessory_alb.png
+
+newmtl HeadMT.001
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 1
+map_Kd KinopioBrigadeHead_alb.png
+map_d KinopioBrigadeHead_alb.png
+map_Bump -bm 0.300000 KinopioBrigadeHead_nrm.png
+
+newmtl RuckMT
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 1
+map_Kd KinopioBrigadeRuck_alb.png
+map_d KinopioBrigadeRuck_alb.png
+map_Bump -bm 0.300000 KinopioBrigadeRuck_nrm.png

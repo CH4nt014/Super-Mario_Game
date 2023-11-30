@@ -167,6 +167,8 @@ $(LocalDebuggerEnvironment)</LocalDebuggerEnvironment>
     <None Include="shader\fragment_shader.frag" />
     <None Include="shader\light_and_shadow.fs" />
     <None Include="shader\light_and_shadow.vs" />
+    <None Include="shader\particle_shader.fs" />
+    <None Include="shader\particle_shader.vs" />
     <None Include="shader\point_light.frag" />
     <None Include="shader\point_light.vert" />
     <None Include="shader\shadow_mapping_depth.fs" />
@@ -174,8 +176,6 @@ $(LocalDebuggerEnvironment)</LocalDebuggerEnvironment>
     <None Include="shader\vertex_shader.vert" />
     <None Include="skybox.fs" />
     <None Include="skybox.vs" />
-    <None Include="smokeShader.fs" />
-    <None Include="smokeShader.vs" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="billboard.h" />
