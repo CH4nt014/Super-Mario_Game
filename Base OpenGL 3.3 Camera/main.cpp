@@ -1329,6 +1329,7 @@ void modelLoad() {
 	lightningParticle = new ParticleHendler("asset/object/Particelle/Scintille/scintille.obj", 2, 2, 0.3);
 	waterParticle = new ParticleHendler("asset/object/Particelle/Acqua/water.obj", 100, 1.8, 1);
 	fireParticle = new ParticleHendler("asset/object/Particelle/Fuoco/smoke.obj", 2, 0.1, 0.3);
+	dustParticle = new ParticleHendler("asset/object/Particelle/Polvere/dust.obj", 2, 1, 0.3);
 
 
 	////////// PERSONAGGI ////////////
@@ -1727,6 +1728,7 @@ int main()
 			lightningParticle->setShaders(simpleShader);
 			waterParticle->setShaders(simpleShader);
 			fireParticle->setShaders(simpleShader);
+			dustParticle->setShaders(simpleShader);
 
 
 			///////// RENDER STAR ////////////
@@ -1759,6 +1761,10 @@ int main()
 			// Goomba
 			posGoomba1 = movimentoCircolareXZ(vec3(98.89, 6.72, -4.47), 5, 0.015);
 			renderNemico(goomba, simpleShader, posGoomba1, vec3(2.8, 2.8, 2.8), -1.55f * (float)glfwGetTime(), vec3(0.0f, 1.0f, 0.0f), true);
+			if (collisionDetect(posGoomba1, 500)) {
+				dustParticle->addParticleGenerator(currentFrame, posGoomba1, posGoomba1 + vec3(0.0,0.5,0.0));
+				dustParticle->Draw(currentFrame, vec3(1.0, 1.0, 1.0));
+			}
 			if (collisionDetect(vec3(98.89, 6.72, -4.47), 30.0)) {
 				if (collisionDetect(posGoomba1, 1.0)) {
 					if (colpito1){
@@ -1771,8 +1777,12 @@ int main()
 			}
 			else colpito1 = true;
 
-			posGoomba2 = movimentoCircolareXZ(vec3(-91.65, 2.71, 83.47), 5, 0.015);
+			posGoomba2 = movimentoCircolareXZ(vec3(-91.65, 2.21, 83.47), 5, 0.015);
 			renderNemico(goomba, simpleShader, posGoomba2, vec3(2.8, 2.8, 2.8), -1.55f * (float)glfwGetTime(), vec3(0.0f, 1.0f, 0.0f), true);
+			if (collisionDetect(posGoomba2, 500)) {
+				dustParticle->addParticleGenerator(currentFrame, posGoomba2 + vec3(0.0, -0.5, 0.0), posGoomba2 );
+				dustParticle->Draw(currentFrame, vec3(1.0, 1.0, 1.0));
+			}
 			if (collisionDetect(vec3(-91.65, 2.71, 83.47), 30.0)) {
 				if (collisionDetect(posGoomba2, 1.0)) {
 					if (colpito2) {
@@ -1799,7 +1809,6 @@ int main()
 
 			// Pukupuku
 			renderNemico(pukupuku, simpleShader, movimentoCircolareXY(vec3(-98.19, 6.94, -89.50), 7), vec3(1.5, 1.5, 1.5), 1.75f * (float)glfwGetTime(), vec3(0.0f, 0.0f, 1.0f), true);
-			
 
 			// Boo
 			//// cerchio
@@ -1841,7 +1850,11 @@ int main()
 			else colpito7 = true;
 
 			// Pokey
-			renderNemico(pokey, simpleShader, movimentoPokey(vec3(-1.33, 9.24, -174.35), 7.74, -2), vec3(2, 2, 2), -1.55f * (float)glfwGetTime(), vec3(1.0f, 1.0f, 1.0f), false);
+			renderNemico(pokey, simpleShader, movimentoPokey(vec3(-1.33, 9.24, -174.35),8.24, -2), vec3(2, 2, 2), -1.55f * (float)glfwGetTime(), vec3(1.0f, 1.0f, 1.0f), false);
+			if (collisionDetect(vec3(-1.33, 9.24, -174.35), 600.0)) {
+				dustParticle->addParticleGenerator(currentFrame, vec3(-1.33, 7.24, -174.35), vec3(-1.33, 7.74, -174.35));
+				dustParticle->Draw(currentFrame, vec3(1.0, 1.0, 1.0));
+			}
 			if (collisionDetect(movimentoPokey(vec3(-1.33, 9.24, -174.35), 7.74, -2), 3.0)) {
 				if (colpito5) {
 					vite -= 1;
@@ -1853,9 +1866,14 @@ int main()
 			else colpito5 = true;
 
 			// Bullet Bill
-			renderNemico(bulletBill, simpleShader, movimentoXZ(vec3(-61.4986, 3.20, -34.618), 5, 0.005), vec3(0.05,0.05,0.05), -1.15, vec3(0.0f, 1.0f, 0.0f), true);
-			fireParticle->addParticleGenerator(currentFrame, movimentoXZ(vec3(-61.4986, 2.70, -34.618), 5, 0.005), movimentoXZ(vec3(-61.4986, 3.70, -34.618), 5, 0.005));
-			fireParticle->Draw(currentFrame, vec3(1.0,1.0,1.0));
+			//renderNemico(bulletBill, simpleShader, movimentoXZ(vec3(-61.4986, 3.20, -34.618), 5, 0.005), vec3(0.05,0.05,0.05), -1.15, vec3(0.0f, 1.0f, 0.0f), true);
+			/*fireParticle->addParticleGenerator(currentFrame, movimentoXZ(vec3(-61.4986, 2.70, -34.618), 5, 0.005), movimentoXZ(vec3(-61.4986, 3.70, -34.618), 5, 0.005));
+			fireParticle->Draw(currentFrame, vec3(1.0,1.0,1.0));*/
+			if (collisionDetect(vec3(-80.4986, 2.20, -24.618), 800.0)) {
+				renderNemico(bulletBill, simpleShader, movimentoXZ(vec3(-61.4986, 3.20, -34.618), 5, 0.005), vec3(0.05, 0.05, 0.05), -1.15, vec3(0.0f, 1.0f, 0.0f), true);
+				fireParticle->addParticleGenerator(currentFrame, movimentoXZ(vec3(-61.4986, 2.70, -34.618), 5, 0.005), movimentoXZ(vec3(-61.4986, 3.70, -34.618), 5, 0.005));
+				fireParticle->Draw(currentFrame, vec3(1.0, 1.0, 1.0));
+			}
 			if (collisionDetect(movimentoXZ(vec3(-61.4986, 2.20, -34.618), 5, 0.005), 4.0)) {
 				if (colpito6) {
 					vite -= 1;
@@ -1998,7 +2016,7 @@ int main()
 				gamestatus = 6;
 			}
 
-			glDepthFunc(GL_LEQUAL);
+			//glDepthFunc(GL_LEQUAL);
 
 			glDepthFunc(GL_LESS);
 			

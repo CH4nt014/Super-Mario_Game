@@ -239,7 +239,7 @@ public:
 		return fixed;
 	}
 	
-	void FixView(glm::vec3 carPos, glm::vec3 carFront) {
+	void FixView(glm::vec3 pgPos, glm::vec3 pgFront) {
 		if (fixed) {
 			float sumX = 0, sumZ = 0;
 			for (auto p : lastFrontX)
@@ -248,17 +248,17 @@ public:
 				sumZ += p;
 			mat4 trans = glm::mat4(1.0f);
 			trans = glm::rotate(trans, glm::radians(FixedYaw), glm::vec3(0.0f, 1.0f, 0.0f));
-			vec4 tempFront = glm::vec4((carFront.x + sumX / lastFrontX.size()) / 2.0f, \
-				carFront.y, (carFront.z + sumZ / lastFrontZ.size()) / 2.0f, 1.0f);
+			vec4 tempFront = glm::vec4((pgFront.x + sumX / lastFrontX.size()) / 2.0f, \
+				pgFront.y, (pgFront.z + sumZ / lastFrontZ.size()) / 2.0f, 1.0f);
 
 			tempFront = trans * tempFront;
 			Front = glm::vec3(tempFront.x, tempFront.y, tempFront.z);
-			Position.x = carPos.x - 5.2f * tempFront.x;
-			Position.z = carPos.z - 5.2f * tempFront.z;
-			Position.y = carPos.y + 3.5;
-			//Position.y = carPos.y + 3.2f * tempFront.y;
-			lastFrontX.push_back(carFront.x);
-			lastFrontZ.push_back(carFront.z);
+			Position.x = pgPos.x - 5.2f * tempFront.x;
+			Position.z = pgPos.z - 5.2f * tempFront.z;
+			Position.y = pgPos.y + 3.5;
+			//Position.y = pgPos.y + 3.2f * tempFront.y;
+			lastFrontX.push_back(pgFront.x);
+			lastFrontZ.push_back(pgFront.z);
 			while (lastFrontX.size() > 25) {
 				lastFrontX.pop_front();
 				lastFrontZ.pop_front();
@@ -291,13 +291,13 @@ public:
 		lastTime = currentTime;
 	}
 
-	void setFixed(vec3& carfront) {
+	void setFixed(vec3& pgFront) {
 		fixed = !fixed;
 		Yaw = 0;
 		FixedYaw = 0;
 		Pitch = 0;
-		lastFrontX.push_back(carfront.x);
-		lastFrontZ.push_back(carfront.z);
+		lastFrontX.push_back(pgFront.x);
+		lastFrontZ.push_back(pgFront.z);
 
 	}
 

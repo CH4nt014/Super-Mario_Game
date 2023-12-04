@@ -1,6 +1,6 @@
 ﻿  main.cpp
 C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\shader_s.h(60,40): warning C4101: 'e': variabile locale senza riferimenti
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\camera.h(258,26): warning C4244: '=': conversione da 'double' a 'T'. Possibile perdita di dati.
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\camera.h(258,25): warning C4244: '=': conversione da 'double' a 'T'. Possibile perdita di dati.
           with
           [
               T=float
@@ -60,50 +60,51 @@ C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1329,99):
 C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1330,86): warning C4305: 'argomento': troncamento da 'double' a 'float'
 C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1331,88): warning C4305: 'argomento': troncamento da 'double' a 'float'
 C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1331,83): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1512,29): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1514,21): warning C4244: '+=': conversione da 'double' a 'float'. Possibile perdita di dati.
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1518,17): warning C4244: '=': conversione da 'float' a 'int'. Possibile perdita di dati.
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1525,22): warning C4244: '-=': conversione da 'float' a 'int'. Possibile perdita di dati.
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1760,67): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1774,68): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1789,66): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1790,51): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1806,83): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1806,92): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1819,93): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1819,83): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1819,75): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1820,81): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1820,71): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1820,63): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1831,69): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1844,81): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1845,67): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1856,89): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1856,120): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1857,99): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1857,153): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1859,70): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1888,53): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1904,47): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1954,60): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1960,73): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1965,74): warning C4305: 'argomento': troncamento da 'double' a 'float'
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2066,16): warning C4244: 'inizializzazione': conversione da 'double' a 'float'. Possibile perdita di dati.
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2245,39): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2252,37): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2253,41): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2256,38): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2257,42): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2268,40): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2275,37): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2276,41): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2279,38): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2280,42): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2294,37): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2299,38): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2307,36): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
-C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2310,37): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1332,87): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1513,29): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1515,21): warning C4244: '+=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1519,17): warning C4244: '=': conversione da 'float' a 'int'. Possibile perdita di dati.
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1526,22): warning C4244: '-=': conversione da 'float' a 'int'. Possibile perdita di dati.
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1762,67): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1780,68): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1799,66): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1800,51): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1815,83): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1815,92): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1828,93): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1828,83): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1828,75): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1829,81): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1829,71): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1829,63): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1840,69): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1853,80): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1858,67): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1873,90): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1873,123): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1874,100): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1874,154): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1877,70): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1906,53): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1922,47): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1972,60): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1978,73): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(1983,74): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2084,16): warning C4244: 'inizializzazione': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2263,39): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2270,37): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2271,41): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2274,38): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2275,42): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2286,40): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2293,37): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2294,41): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2297,38): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2298,42): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2312,37): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2317,38): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2325,36): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\main.cpp(2328,37): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
 C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\kdtree.h(224,33): warning C4267: 'argomento': conversione da 'size_t' a 'int'. Possibile perdita di dati.
 C:\Users\axel1\Desktop\Progetto finale\Base OpenGL 3.3 Camera\kdtree.h(220,23): message : durante la compilazione della funzione membro 'double kd::AlberoKD<TriangoloPt>::calcolaDistanza(const PuntoT &,const PuntoT &)' di modello classe
           with
