@@ -6,6 +6,7 @@ Welcome to **Super Mario Coin Quest**! This project is a C++ and OpenGL-based ga
 
 - [Introduction](#introduction)
 - [Features](#features)
+- [Installation](#installation)
 - [Controls](#controls)
 - [Credits](#credits)
 - [License](#license)
@@ -47,7 +48,3 @@ This project was developed by [Your Name](https://github.com/CH4nt014). Special 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
-
----
-
-Feel free to customize the content as per your specific needs and add any additional sections or details relevant to your project.
