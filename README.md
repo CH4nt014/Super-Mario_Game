@@ -1,9 +1,8 @@
 # Super Mario Coin Quest
 
-Welcome to **Super Mario Coin Quest**! This project is a C++ and OpenGL-based game where players can choose between three iconic characters: Mario, Luigi, and Yoshi. The objective is to find a specified number of coins based on the selected difficulty level.
-
-# Screenshot
 ![alt text](https://github.com/CH4nt014/Super-Mario_Game/blob/main/Screenshot/Screenshot%202024-11-15%20105731.png?raw=true)
+
+Welcome to **Super Mario Coin Quest**! This project is a C++ and OpenGL-based game where players can choose between three iconic characters: Mario, Luigi, and Yoshi. The objective is to find a specified number of coins based on the selected difficulty level.
 
 ## Table of Contents
 
