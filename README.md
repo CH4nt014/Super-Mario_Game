@@ -2,6 +2,9 @@
 
 Welcome to **Super Mario Coin Quest**! This project is a C++ and OpenGL-based game where players can choose between three iconic characters: Mario, Luigi, and Yoshi. The objective is to find a specified number of coins based on the selected difficulty level.
 
+# Screenshot
+![alt text](https://github.com/CH4nt014/Super-Mario_Game/blob/main/Screenshot/Screenshot%202024-11-15%20105731.png?raw=true)
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -18,9 +21,15 @@ Super Mario Coin Quest is a fun and engaging game inspired by the classic Super 
 ## Features
 
 - **Character Selection:** Play as Mario, Luigi, or Yoshi.
+![alt text](https://github.com/CH4nt014/Super-Mario_Game/blob/main/Screenshot/Screenshot%202024-11-15%20110254.png?raw=true)
+![alt text](https://github.com/CH4nt014/Super-Mario_Game/blob/main/Screenshot/Screenshot%202024-11-15%20112037.png?raw=true)
+![alt text](https://github.com/CH4nt014/Super-Mario_Game/blob/main/Screenshot/Screenshot%202024-11-15%20112109.png?raw=true)
 - **Difficulty Levels:** Choose from multiple difficulty settings.
+![alt text](https://github.com/CH4nt014/Super-Mario_Game/blob/main/Screenshot/Screenshot%202024-11-15%20105936.png?raw=true)
 - **Advanced Graphics:** Utilizes OpenGL for rendering and FBX models for character and environment design.
+![alt text](https://github.com/CH4nt014/Super-Mario_Game/blob/main/Screenshot/Screenshot%202024-11-15%20110950.png?raw=true)
 - **Programming Techniques:** Implements advanced programming techniques and algorithms to enhance gameplay experience.
+![alt text](https://github.com/CH4nt014/Super-Mario_Game/blob/main/Screenshot/Screenshot%202024-11-15%20111056.png?raw=true)
 
 ## Installation
 
@@ -38,7 +47,7 @@ To run this project, you will need to have the following dependencies installed 
 
 ## Credits
 
-This project was developed by [Your Name](https://github.com/CH4nt014). Special thanks to the following resources and communities for their invaluable support and tutorials:
+This project was developed by [CH4nt014](https://github.com/CH4nt014). Special thanks to the following resources and communities for their invaluable support and tutorials:
 
 - [OpenGL Tutorial](https://www.opengl-tutorial.org/)
 - [GLFW Documentation](https://www.glfw.org/docs/latest/)
